@@ -14,19 +14,20 @@ while(True):
     
     # Capture the video frame 
     # by frame 
-    ret, frame = vid.read() 
+    ret, frame = vid.read()
+    cv2.imshow('origframe', frame)
 
     # Display the resulting frame 
     
     for i in range(480):
         for j in range(640):
-            if frame[i][j][0]>150 and frame[i][j][1]>150 and frame[i][j][2]>150:
+            if frame[i][j][0]>200 and frame[i][j][1]>200 and frame[i][j][2]>200:
                 
                 frame[i][j][0]=defbg[i][j][0]
                 frame[i][j][1]=defbg[i][j][1]
                 frame[i][j][2]=defbg[i][j][2]
                 '''
-                frame[i][j][0]=0  #############replace white color
+                frame[i][j][0]=0
                 frame[i][j][1]=0
                 frame[i][j][2]=0
                 '''
@@ -40,4 +41,7 @@ while(True):
 # After the loop release the cap object 
 vid.release() 
 # Destroy all the windows 
-cv2.destroyAllWindows() 
+cv2.destroyAllWindows()
+
+
+#print(frame)
