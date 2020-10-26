@@ -7,7 +7,7 @@ vid = cv2.VideoCapture(1)
 setfps = vid.set(cv2.CAP_PROP_FPS, 5)
 i=input()
 bgret, defbg = vid.read()
-print("bg capt")
+print("background captured")
 #print(defbg)
 
 while(True): 
